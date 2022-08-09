@@ -258,6 +258,9 @@ prompt_git() {
         else
             prompt_segment green black
         fi
+
+        ref+="  $(git describe --always --tags --abbrev=10)"
+
         PR="$PR${ref/refs\/heads\// }$dirty"
     fi
 }
